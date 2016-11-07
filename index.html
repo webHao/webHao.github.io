@@ -135,6 +135,76 @@
       <div class="body-wrap">
         
   
+    <article id="post-OOP-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/06/OOP-01/">面向对象编程 OOP (01)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面向对象01"><a href="#面向对象01" class="headerlink" title="面向对象01"></a>面向对象01</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h2><p><strong>面向对象</strong> : 面向对象是一种编程思想,这种思想帮助我们解决问题的时候，将问题的主体放在对象上面，需要先分析对象是什么，对象做了什么事情.</p>
+<p><strong>对象</strong> :</p>
+<ul>
+<li>键值对的集合</li>
+<li>封装了属性（特征）和方法（行为）</li>
+</ul>
+<h2 id="2-创建对象"><a href="#2-创建对象" class="headerlink" title="2.创建对象"></a>2.创建对象</h2><h3 id="2-1通过对象字面量创建对象"><a href="#2-1通过对象字面量创建对象" class="headerlink" title="2.1通过对象字面量创建对象"></a>2.1通过对象字面量创建对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var obj = &#123;name:&apos;小明&apos;&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-2属性的设置"><a href="#2-2属性的设置" class="headerlink" title="2.2属性的设置"></a>2.2属性的设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">obj.age = 23</div><div class="line">obj[&quot;say&quot;]=function()&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-3属性和方法的读取"><a href="#2-3属性和方法的读取" class="headerlink" title="2.3属性和方法的读取"></a>2.3属性和方法的读取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">obj.age</div><div class="line">obj.say()</div></pre></td></tr></table></figure>
+<h3 id="2-4属性和方法的删除"><a href="#2-4属性和方法的删除" class="headerlink" title="2.4属性和方法的删除"></a>2.4属性和方法的删除</h3><p><code>delete obj.say;</code> //只能删除自身所在的内存中的属性和方法</p>
+<h2 id="3-构造函数"><a href="#3-构造函数" class="headerlink" title="3.构造函数"></a>3.构造函数</h2><p>有一些对象他们有共同的特征和行为,就用构造函数来创建对象</p>
+<p><strong>好处</strong> : 一次封装,多次调用,节省代码,让代码更具可读性</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function Person(nam,age)&#123;</div><div class="line">this.name = name;</div><div class="line">this.age = age;</div><div class="line">this.walk = function()&#123;&#125;</div><div class="line">&#125;</div><div class="line">var p1 = new Person();</div></pre></td></tr></table></figure>
+<h2 id="4-原型"><a href="#4-原型" class="headerlink" title="4.原型"></a>4.原型</h2><p><strong>代码示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function Person()&#123;&#125; //构造函数</div><div class="line">var p1 = new Person(); //原型对象</div><div class="line">Person.prototype.constructor === Person</div><div class="line">p1.__proto__ == Person.prototype</div></pre></td></tr></table></figure>
+<p><strong>完整原型链</strong></p>
+<img src="/2016/11/06/OOP-01/prototype.png" alt="prototype.png" title="">
+<h3 id="4-1-对象的属性读取"><a href="#4-1-对象的属性读取" class="headerlink" title="4.1 对象的属性读取"></a>4.1 对象的属性读取</h3><ol>
+<li>查找当前对象的内存中是否定义了该属性,找到该属性就停止查找.</li>
+<li>第一步没有找到,就去当前对象的<strong>proto</strong>属性(原型对象)查找,找到该属性则停止查找.</li>
+<li>第二步没找到,就去原型对象的原型对象中查找</li>
+<li>找到某个对象(是没有原型对象的,也就是<strong>proto</strong>==null)如果还找不到则确定无法获取该属性.</li>
+</ol>
+<h3 id="4-2-设置对象的"><a href="#4-2-设置对象的" class="headerlink" title="4.2 设置对象的"></a>4.2 设置对象的</h3><p><code>jackson.sing = function(){}</code></p>
+<h3 id="4-3-删除对象属性"><a href="#4-3-删除对象属性" class="headerlink" title="4.3 删除对象属性"></a>4.3 删除对象属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">delete jackson.sing; //如果jackson本身不存在sing属性,不会报错</div><div class="line">delete jackson.__proto__.sing;//删除原型对象中的sing属性</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/06/OOP-01/" class="archive-article-date">
+  	<time datetime="2016-11-06T11:44:42.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-06</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-issue-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
