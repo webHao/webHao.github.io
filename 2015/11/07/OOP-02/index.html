@@ -6,21 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | 孙昊男的个人博客</title>
+  <title>面向对象编程 OOP (02) | 孙昊男的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="面向对象-02继承1.扩展原型对象实现继承在原型对象上扩展属性和方法
+示例
+12Student.prototype.a1 = function()&amp;#123;&amp;#125;
+2.替换原型对象实现继承将原来的原型对象替换为自定义的原型对象
+示例
+123456789Football.prototype = &amp;#123;constructor:Football,a1:function:&amp;#123;&amp;#1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/11/04/hello-world/index.html">
+<meta property="og:title" content="面向对象编程 OOP (02)">
+<meta property="og:url" content="http://yoursite.com/2015/11/07/OOP-02/index.html">
 <meta property="og:site_name" content="孙昊男的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-11-04T11:38:54.149Z">
+<meta property="og:description" content="面向对象-02继承1.扩展原型对象实现继承在原型对象上扩展属性和方法
+示例
+12Student.prototype.a1 = function()&amp;#123;&amp;#125;
+2.替换原型对象实现继承将原来的原型对象替换为自定义的原型对象
+示例
+123456789Football.prototype = &amp;#123;constructor:Football,a1:function:&amp;#123;&amp;#1">
+<meta property="og:image" content="http://yoursite.com/2015/11/07/OOP-02/main.png">
+<meta property="og:updated_time" content="2016-11-07T07:47:24.848Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="面向对象编程 OOP (02)">
+<meta name="twitter:description" content="面向对象-02继承1.扩展原型对象实现继承在原型对象上扩展属性和方法
+示例
+12Student.prototype.a1 = function()&amp;#123;&amp;#125;
+2.替换原型对象实现继承将原来的原型对象替换为自定义的原型对象
+示例
+123456789Football.prototype = &amp;#123;constructor:Football,a1:function:&amp;#123;&amp;#1">
+<meta name="twitter:image" content="http://yoursite.com/2015/11/07/OOP-02/main.png">
   
     <link rel="alternative" href="/atom.xml" title="孙昊男的个人博客" type="application/atom+xml">
   
@@ -137,7 +151,7 @@ Quick">
 </nav>
 
       <div class="body-wrap">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-OOP-02" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -147,7 +161,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      面向对象编程 OOP (02)
     </h1>
   
 
@@ -155,22 +169,37 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <img src="/2015/11/07/OOP-02/main.png" alt="main.png" title="">
+<h1 id="面向对象-02"><a href="#面向对象-02" class="headerlink" title="面向对象-02"></a>面向对象-02</h1><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="1-扩展原型对象实现继承"><a href="#1-扩展原型对象实现继承" class="headerlink" title="1.扩展原型对象实现继承"></a>1.扩展原型对象实现继承</h3><p>在原型对象上扩展属性和方法</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Student.prototype.a1 = function()&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-替换原型对象实现继承"><a href="#2-替换原型对象实现继承" class="headerlink" title="2.替换原型对象实现继承"></a>2.替换原型对象实现继承</h3><p>将原来的原型对象替换为自定义的原型对象</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Football.prototype = &#123;</div><div class="line">constructor:Football,</div><div class="line">a1:function:&#123;&#125;,</div><div class="line">a2:function:&#123;&#125;,</div><div class="line">a3:function:&#123;&#125;,</div><div class="line">a4:function:&#123;&#125;,</div><div class="line">a5:function:&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-混入继承"><a href="#3-混入继承" class="headerlink" title="3.混入继承"></a>3.混入继承</h3><p><strong>使用场景</strong></p>
+<p>已知对象o,o2,需要将o中的功能(属性和方法)拷贝到o2中</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var o = &#123;name:&quot;张三&quot;,age:18&#125;</div><div class="line">var o2 = &#123;&#125;;</div><div class="line">for(var key in o)&#123;</div><div class="line">o2[key] = o[key];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-原型-混入继承"><a href="#4-原型-混入继承" class="headerlink" title="4.原型+混入继承"></a>4.原型+混入继承</h3><p><strong>将混入继承模型封装成函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function mixin(target,source)&#123;</div><div class="line">for(key in source)&#123;</div><div class="line">target[key] = source[key];</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function Cat()&#123;</div><div class="line">mixin(Cat.prototype,&#123;a:10,b:20,c:30&#125;);</div><div class="line">&#125;</div><div class="line">var tony = new Cat();</div></pre></td></tr></table></figure>
+<h3 id="5-经典继承"><a href="#5-经典继承" class="headerlink" title="5.经典继承"></a>5.经典继承</h3><p><strong>使用场景</strong></p>
+<p>要创建一个对象(不需要关心构造函数)新对象需要继承自另外一个指定对象</p>
+<p><strong>示例</strong></p>
+<p>先检测浏览器是否支持Object.create(),如果支持直接使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">if(typeof Object.create !==&apos;function&apos;)&#123;</div><div class="line">Object.create = function(o)&#123;</div><div class="line">function F()&#123;&#125;</div><div class="line">F.prototype = o;</div><div class="line">return new F();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6-借用构造函数实现继承"><a href="#6-借用构造函数实现继承" class="headerlink" title="6.借用构造函数实现继承"></a>6.借用构造函数实现继承</h3><p>子类构造函数(Student)借用父类构造函数(Person)给子类的实例添加属性</p>
+<p><strong>注意</strong></p>
+<p>由于要借用父类的构造函数,所有父类函数的功能要对于子类对象通用</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">this.name = name;</div><div class="line">this.age = age;</div><div class="line">&#125;</div><div class="line">function Student(name,age,number)&#123;</div><div class="line">Person.call(this,name,age);</div><div class="line">this.number = number;</div><div class="line">&#125;</div><div class="line">var s1 = new Student(&apos;张三&apos;,20,666);</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/11/04/hello-world/" class="archive-article-date">
-  	<time datetime="2016-11-04T11:38:54.149Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-04</time>
+      <a href="/2015/11/07/OOP-02/" class="archive-article-date">
+  	<time datetime="2015-11-07T02:58:42.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-11-07</time>
 </a>
       
       
@@ -183,9 +212,18 @@ Quick">
   
 <nav id="article-nav">
   
+    <a href="/2016/11/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
-    <a href="/2015/11/07/OOP-02/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面向对象编程 OOP (02)</div>
+  
+    <a href="/2015/11/06/OOP-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面向对象编程 OOP (01)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -219,7 +257,7 @@ Quick">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://yoursite.com/2016/11/04/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="OOP-02" data-title="面向对象编程 OOP (02)" data-url="http://yoursite.com/2015/11/07/OOP-02/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
